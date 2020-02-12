@@ -13,6 +13,7 @@ class IMGKit
       @wkhtmltoimage ||= begin
         path = (using_bundler? ? `bundle exec which wkhtmltoimage` : `bundle exec which wkhtmltoimage`)
         puts "\033[41;30m#{path}\033[0m"
+        path ||= "/home/deploy/morefree/shared/bundle/ruby/2.6.0/bin/wkhtmltoimage\n"
         path = (path.split("\n").compact.last || "").chomp
         path = '/usr/local/bin/wkhtmltoimage' if path.strip.empty?  # Fallback
         path
