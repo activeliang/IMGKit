@@ -11,7 +11,7 @@ class IMGKit
 
     def wkhtmltoimage
       @wkhtmltoimage ||= begin
-        path = (using_bundler? ? `bundle exec which wkhtmltoimage` : `which wkhtmltoimage`)
+        path = (using_bundler? ? `bundle exec which wkhtmltoimage` : `bundle exec which wkhtmltoimage`)
         puts "\033[41;30m#{path}\033[0m"
         path = (path.split("\n").compact.last || "").chomp
         path = '/usr/local/bin/wkhtmltoimage' if path.strip.empty?  # Fallback
