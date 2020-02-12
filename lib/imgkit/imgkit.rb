@@ -70,7 +70,7 @@ class IMGKit
     if File.exist?(default)
       default
     else
-      logger.info "\033[45;30m#{default}\033[0m"
+      puts "\033[45;30m#{default}\033[0m"
       default.split('/').last
     end
   end
